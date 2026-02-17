@@ -1,5 +1,4 @@
 import type { Context } from "hono";
-import { ClassController } from "./class.controller";
 import { UserModel } from "../models/user.model";
 
 export class UserController {
