@@ -2,7 +2,7 @@ import type { Context } from "hono";
 import { UserModel } from "../models/user.model";
 
 export class UserController {
-  async getAllusers(c: Context) {
+  async getAllUsers(c: Context) {
     const users = await UserModel.fetchAll({
       withRelated: ["schools", "classess"],
     }).map((item: any) => {
@@ -32,7 +32,7 @@ export class UserController {
       data: users,
     });
   }
-  
+
   async getUserDetail(c: Context) {
     const id = c.req.param("id");
 
