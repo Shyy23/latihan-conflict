@@ -4,7 +4,7 @@ import { UserModel } from "../models/user.model";
 export class UserController {
   async getAllUsers(c: Context) {
     const users = await UserModel.fetchAll({
-      withRelated: ["schools", "classess"],
+      withRelated: ["schools", "classes"],
     }).map((item: any) => {
       const itemJson = item.toJson();
 
@@ -43,7 +43,7 @@ export class UserController {
 
     const userJson = user.toJSON();
 
-    const classRel = user.related("classess");
+    const classRel = user.related("classes");
     const schoolRel = user.related("schools");
 
     return c.json({
