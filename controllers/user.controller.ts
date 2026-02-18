@@ -6,7 +6,7 @@ export class UserController {
     const users = await UserModel.fetchAll({
       withRelated: ["schools", "classes"],
     }).map((item: any) => {
-      const itemJson = item.toJson();
+      const itemJson = item.toJSON();
 
       const classRel = item.related("classes");
       const schoolRel = item.related("schools");
